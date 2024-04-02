@@ -1,17 +1,19 @@
 import express, { Express } from 'express';
 import path from 'path';
+import dotenv from 'dotenv';
+import router from './routes';
+dotenv.config();
 
 const app: Express = express();
-const port = 3000; // Define the port
+const port: number = Number(process.env.PORT) || 3000;
 
+app.use(express.static('public'));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "css")));
 app.set("views", path.join(__dirname, "views"));
-app.set("view engine", 'ejs'); // Set the view engine to ejs
+app.set("view engine", 'ejs'); 
 
-app.get("/", (req, res) => {
-  res.send("Homepage");
-});
+app.use('/', router);
 
 (async () => {
   try {

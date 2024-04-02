@@ -1,0 +1,24 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles.css">
+        <title><%= title %></title>
+      </head>
+<body>
+  <div class="content">
+    <h2>All Policies</h2> 
+    <% if (data.length > 0) { %>
+        <% data.forEach(policy => { %>
+          <a class="single" href="/policy/<%= policy._id %>">
+            <h3 class="title"><%= policy?.full_name %></h3>
+            <p class="snippet"><%= policy.model %></p>
+          </a>
+        <% }) %>
+      <% } else { %>
+        <p>There are no policies to display...</p>
+      <% } %>
+  </div>
+
+</body>
+</html>
