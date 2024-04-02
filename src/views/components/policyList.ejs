@@ -1,0 +1,43 @@
+<section class="py-3 sm:py-5">
+    <div class="mx-auto max-w-screen-2xl">
+        <div class="relative overflow-hidden bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-4 py-3">Policy Number</th>
+                            <th scope="col" class="px-4 py-3">Full Name</th>
+                            <th scope="col" class="px-4 py-3">Email</th>
+                            <th scope="col" class="px-4 py-3">Model</th>
+                            <th scope="col" class="px-4 py-3">Manufacturer</th>
+                            <th scope="col" class="px-4 py-3">Extra cover</th>
+                            <th scope="col" class="px-4 py-3">Premium</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if (data?.length > 0) { %>
+                            <% data.forEach(policy => { %>
+                                <tr class="border-b dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700">
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><a class="single" href="/policy/<%= policy._id %>"><%= policy?.policy_number %></a></td>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><a class="single" href="/policy/<%= policy._id %>"><%= policy?.full_name %></a></td>
+                                        <td class="px-4 py-2">
+                                            <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300"><%= policy?.email_address %></span>
+                                        </td>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= policy?.model %></td>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= policy?.manufacturer %></td>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= policy?.aesthetic_cover %></td>
+                                        <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= policy?.premium %></td>
+                               
+                                </tr>
+                            <% }) %>
+                        <% } else { %>
+                            <tr>
+                                <td colspan="7" class="px-4 py-2">There are no policies to display...</td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
