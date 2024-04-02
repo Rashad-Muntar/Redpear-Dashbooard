@@ -15,3 +15,18 @@ export const getPoliciesService = async () => {
       return error.message;
     }
 };
+
+export const getPolicyService = async (id:string) => {
+    try {
+      const policy = await axios({
+        method: 'get',
+        url: `${baseUrl}/policy`,
+        data:{
+            id: id
+        }
+      });
+      return policy;
+    } catch (error: any) {
+      return error.message;
+    }
+};
