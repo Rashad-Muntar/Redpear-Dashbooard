@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "node dist/index.js",
-    "build": "tsc",
+    "build": "npx tsc",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "build:tailwind": "postcss public/styles/tailwind.css -o public/styles/style.css"
   },
