@@ -13,21 +13,14 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", 'ejs'); 
 app.use(express.static("public"));
 
+app.use('/', router);
 
-// app.use('/', router);
-app.get("/", (req, res) => {
-  res.send("HOMEPAGE")
-})
-
-app.listen(port, () => {
-  console.log(`⚡️[server]: App is running at http://localhost:${port}`);
-});
-// (async () => {
-//   try {
-//     app.listen(port, () => {
-//       console.log(`⚡️[server]: App is running at http://localhost:${port}`);
-//     });
-//   } catch (error: any) {
-//     return error.message;
-//   }
-// })();
+(async () => {
+  try {
+    app.listen(port, () => {
+      console.log(`⚡️[server]: App is running at http://localhost:${port}`);
+    });
+  } catch (error: any) {
+    return error.message;
+  }
+})();
