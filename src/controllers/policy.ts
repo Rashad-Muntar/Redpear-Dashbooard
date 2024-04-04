@@ -4,7 +4,7 @@ import { Request, Response } from 'express'
 export const getPolicies = async (req: Request, res: Response) => {
   try {
     const policies = await getPoliciesService();
-    res.render('index', { data: policies?.data?.data, title: 'Policies' });
+    res.render('index', { data: policies?.data, title: 'Policies' });
   } catch (error) {
     console.log(error);
   }

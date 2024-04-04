@@ -4,9 +4,6 @@
   "main": "index.js",
   "author": "Rashad",
   "license": "MIT",
-  "engines": {
-    "node": "18.x"
-  },
   "devDependencies": {
     "@types/ejs": "^3.1.5",
     "@types/express": "^4.17.21",

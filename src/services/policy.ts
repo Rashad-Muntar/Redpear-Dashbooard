@@ -1,15 +1,14 @@
 import axios from "axios"
 import dotenv from 'dotenv';
+import { RequestHandler } from "express";
+import { requestHandler } from "./api";
 dotenv.config();
 
 const baseUrl: string = process.env.API_ENDPOINT || ""
 
-export const getPoliciesService = async () => {
+export const getPoliciesService =  async () => {
     try {
-      const policies = await axios({
-        method: 'get',
-        url: `${baseUrl}/policies`
-      });
+      const policies = requestHandler('get', null,  `${baseUrl}/policies`)
       return policies;
     } catch (error: any) {
       return error.message;
@@ -30,3 +29,4 @@ export const getPolicyService = async (id:string) => {
       return error.message;
     }
 };
+
