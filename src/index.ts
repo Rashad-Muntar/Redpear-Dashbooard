@@ -10,7 +10,6 @@ const port: number = Number(process.env.PORT) || 3000;
 
 // Serve static files from the public directory
 app.use(express.static("public"));
-
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", 'ejs'); 
 
