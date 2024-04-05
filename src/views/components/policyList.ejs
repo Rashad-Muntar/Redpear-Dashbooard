@@ -5,7 +5,7 @@
                 <div class="flex items-center flex-1 space-x-4">
                     <h5>
                         <span class="text-gray-500">All Products:</span>
-                        <span class="dark:text-white">123456</span>
+                        <span class="dark:text-white"><%=data?.length%></span>
                     </h5>
                     <h5>
                         <span class="text-gray-500">Total sales:</span>
@@ -50,14 +50,12 @@
                                     <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><a class="single" href="/policy/<%= policy._id %>"><%= policy?.policy_number %></a></td>
                                     <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap text-blue-500"><a class="single text-blue-500 underline underline-offset-1" href="/policy/<%= policy._id %>"><%= policy?.full_name %></a></td>
                                     <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= policy?.email_address %></td>
-                                    <td class="px-4 py-2">
-                                        <span class="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded dark:bg-primary-900 dark:text-primary-300"><%= policy?.premium %></span>
-                                    </td>
+                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">Ghc<%= policy?.premium %></td>
                                     <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= policy?.brand %></td>
                                     <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= policy?.model %></td>
                                     <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= policy?.year %></td>
                                     <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= policy?.aesthetic_cover %></td>
-                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">Ghc<%= policy?.manufacturer %></td>
+                                    <td class="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white"><%= policy?.manufacturer %></td>
                             </tr>
                             <% }) %>
                         <% } else { %>
