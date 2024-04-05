@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "node dist/index.js",
-    "build": "npx tsc && cp -R src/views dist/views",
+    "build": "rimraf dist && tsc && cp -R src/views dist/views",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
     "build:tailwind": "postcss public/styles/tailwind.css -o public/styles/style.css"
   },
@@ -27,6 +27,7 @@
     "express": "^4.19.2",
     "postcss": "^8.4.38",
     "postcss-cli": "^11.0.0",
+    "rimraf": "^5.0.5",
     "tailwindcss": "^3.4.3",
     "yarn": "^1.22.22"
   }
