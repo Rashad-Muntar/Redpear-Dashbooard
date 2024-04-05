@@ -18,15 +18,13 @@ app.use(express.static("public"));
 app.use('/', router);
 // app.get("/", getPolicy)
 
-app.listen(port, () => {
-  console.log(`⚡️[server]: App is running at http://localhost:${port}`);
-});
-// (async () => {
-//   try {
-//     app.listen(port, () => {
-//       console.log(`⚡️[server]: App is running at http://localhost:${port}`);
-//     });
-//   } catch (error: any) {
-//     return error.message;
-//   }
-// })();
+
+(async () => {
+  try {
+    app.listen(port, () => {
+      console.log(`⚡️[server]: App is running at http://localhost:${port}`);
+    });
+  } catch (error: any) {
+    return error.message;
+  }
+})();
