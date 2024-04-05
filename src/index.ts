@@ -15,8 +15,8 @@ app.set("view engine", 'ejs');
 app.use(express.static("public"));
 
 
-// app.use('/', router);
-app.get("/", getPolicy)
+app.use('/', router);
+// app.get("/", getPolicy)
 
 app.listen(port, () => {
   console.log(`⚡️[server]: App is running at http://localhost:${port}`);
