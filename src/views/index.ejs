@@ -1,21 +1,14 @@
 <html lang="en">
-    <%- include("partials/head") %>
+    <%- include("partials/head.ejs") %>
 <body>
-   
-    <div class="flex">
-        <div class="sm:w-none md:w-[30%]">
-         
-        </div>
-        <div class="sm:w-[78%] mx-2">
-            <%- include("partials/navbar") %>
-            <div>
-                <h2 class="text-3xl">All Policies</h2> 
-                <%- include("./components/policyList.ejs", {data: data}) %>
-            </div>
-              
+    <div >
+        <%- include("partials/navbar.ejs") %>
+        <%- include("partials/menu.ejs") %>
+        <main class="md:ml-64 h-auto pt-20">
+            <%- include("components/policyList.ejs", {data: data}) %>
+          </main>
         </div>
     </div>
-   
-
 </body>
 </html>
+
